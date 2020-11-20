@@ -18,10 +18,12 @@ ENV CONFIG_FILE_PATH /app
 
 RUN mkdir /app
 
-COPPY / /app/
+COPY / /app/
 
 # Copy our start script
 COPY start-container.sh /usr/local/bin/start-container
+
+RUN chmod +x /usr/local/bin/start-container
 
 ENTRYPOINT ["start-container"]
 
